@@ -8,10 +8,10 @@ function Footer() {
                 <p className="text-xl">09:00 ~ 18:00</p>
                 <p className="text-xl">주말, 공휴일 휴무</p>
                 <div className="lex w-full justify-end pt-4">
-                    <a href="#top" className="px-4 py-2 bg-gray-300 rounded-md">1:1 문의</a>
+                    <a href="#top" className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400 transition duration-250 ease-in-out">1:1 문의</a>
                 </div>
             </div>
-            <div className="max-w-6xl mx-auto px-8 mt-12 mb-12 text-gray-600">
+            <div className="max-w-6xl mx-auto px-8 py-12 text-gray-600">
                 <p>
                     (주)갯피는 통신판매중개자로서 통신판매의 당사자가 아니며 개별 판매자가 제공하는 서비스에 대한 이행, 계약사항 등과 관련한 의무와 책임은 거래당사자에게 있습니다.
                 </p>
