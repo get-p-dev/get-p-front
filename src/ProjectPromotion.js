@@ -61,7 +61,7 @@ function ProjectPromotion() {
                                 <a href="#top" key={index} className="relative flex items-center justify-center rounded-md h-full bg-gray-300 hover:scale-105 transition ease-in-out overflow-hidden">
                                     <div className="h-full w-full" style={imageCover(element.imageUrl)}>
                                         <div className="absolute bg-gradient-to-t from-gray-300/80 to-transparent w-full h-full">
-                                            <div className="flex h-full px-4 pb-2 items-end">
+                                            <div className="flex h-full px-3 pb-2 items-end">
                                                 <p className="font-bold text-lg">Steve Steveson</p>
                                             </div>
                                         </div>

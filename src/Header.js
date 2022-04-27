@@ -15,8 +15,8 @@ function Header() {
                     <a href="#top" className="underline text-gray-600">Info</a>
                 </div>
                 <div className="grow-0 flex flex-row gap-2">
-                    <a href="#top" className="underline">My Page</a>
-                    <a href="#top" className="underline">Log Out</a>
+                    <a href="#top" className="underline">Log In</a>
+                    <a href="#top" className="underline">Sign Up</a>
                 </div>
             </div>
         </div>
