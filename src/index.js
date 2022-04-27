@@ -2,12 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
+import Header from './Header'
+import AdBanner from './AdBanner'
 import reportWebVitals from './reportWebVitals';
+import ProjectPromotion from './ProjectPromotion';
+import PersonPromotion from './PersonPromotion';
+import Footer from './Footer';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <Header />
+    <AdBanner />
+    <ProjectPromotion />
+    <PersonPromotion />
+    <Footer />
   </React.StrictMode>
 );
 
