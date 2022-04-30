@@ -4,28 +4,28 @@ function ProjectPromotion() {
     const PromotionList = [
         {
             featured: 1,
-            data: 1,
+            data: 'Project 1',
             imageUrl: "https://picsum.photos/id/1/800/450"
         },
         {
             featured: 0,
-            data: 2,
-            imageUrl: "https://picsum.photos/id/2/800/450"
+            data: 'Project 2',
+            imageUrl: "https://picsum.photos/id/35/800/450"
         },
         {
             featured: 0,
-            data: 3,
-            imageUrl: "https://picsum.photos/id/3/800/450"
+            data: 'Project 3',
+            imageUrl: "https://picsum.photos/id/11/800/450"
         },
         {
             featured: 0,
-            data: 4,
-            imageUrl: "https://picsum.photos/id/4/800/450"
+            data: 'Project 4',
+            imageUrl: "https://picsum.photos/id/135/800/450"
         },
         {
             featured: 0,
-            data: 5,
-            imageUrl: "https://picsum.photos/id/5/800/450"
+            data: 'Project 5',
+            imageUrl: "https://picsum.photos/id/512/800/450"
         },
     ]
 
@@ -38,7 +38,7 @@ function ProjectPromotion() {
     }
 
     return (
-        <div className="max-w-6xl mx-auto px-4 mt-12">
+        <div className="max-w-6xl mx-auto px-4 pt-10">
             <div className="flex w-full pt-4 px-2">
                 <h2 className="grow text-4xl font-bold">Trending Projects</h2>
                 <a href="#top" className="grow-0 bg-gray-100 px-4 py-2 rounded-md text-lg hover:bg-gray-300 transition duration-250 ease-in-out">+ more</a>
