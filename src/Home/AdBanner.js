@@ -33,7 +33,7 @@ function AdBanner() {
     ]
     return (
         <div className="max-w-4xl mx-auto">
-            <div className="w-auto mx-4 mt-8 overflow-scroll rounded-md">
+            <div className="w-auto mx-4 mt-8 overflow-scroll rounded-2xl">
                 <div className="relative flex flex-row bg-gray-300 w-full h-96">
                     {
                         AdList.map((element, index) => {

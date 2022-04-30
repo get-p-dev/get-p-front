@@ -29,13 +29,13 @@ function SignIn() {
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 아이디 또는 이메일
                             </h3>
-                            <input className="w-full border-2 rounded-full px-6 py-4 border-" type="text" name="id" placeholder="email@website.com" onChange={e => setUserName(e.target.value)} />
+                            <input className="w-full border-2 rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="email@website.com" onChange={e => setUserName(e.target.value)} />
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 비밀번호
                             </h3>
-                            <input className="w-full border-2 rounded-full px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력하세요." onChange={e => e.target.value} />
+                            <input className="w-full border-2 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력하세요." onChange={e => e.target.value} />
                         </label>
                         <div className="flex flex-row justify-between px-4">
                             <label className="flex flex-row items-center gap-4">
@@ -50,10 +50,10 @@ function SignIn() {
                                 비밀번호를 잊어버리셨나요? <span className=" font-bold">비밀번호 찾기</span>
                             </Link>
                         </div>
-                        <button className="w-full text-white bg-gray-500 hover:bg-gray-600 rounded-full py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer" type="submit" name="submit">로그인</button>
+                        <button className="w-full text-white bg-gray-500 hover:bg-gray-600 rounded-2xl py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer" type="submit" name="submit">로그인</button>
                     </form>
                     <div>
-                        <button className="w-full bg-yellow-400 hover:bg-yellow-500 rounded-full font-semibold py-4 text-lg transition-all ease-in-out">
+                        <button className="w-full bg-yellow-400 hover:bg-yellow-500 rounded-2xl font-semibold py-4 text-lg transition-all ease-in-out">
                             <span className="font-bold">카카오톡</span>으로 로그인하기
                         </button>
                     </div>
