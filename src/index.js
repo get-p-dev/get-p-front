@@ -8,7 +8,8 @@ import {
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Home from './Home/Home'
-import Login from './Login/Login'
+import SignIn from './Member/SignIn'
+import SignUp from './Member/SignUp'
 import Header from './Header'
 import Footer from './Footer'
 import NotFound from './NotFound'
@@ -16,16 +17,15 @@ import NotFound from './NotFound'
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
-        {/* <Route path="/signup" element={<App />} /> */}
-        <Route path="*" element={<NotFound />} />
-      </Routes>
-      <Footer />
-    </>
+    <Header />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="signin" element={<SignIn />} />
+      <Route path="signup" element={<SignUp />} />
+      {/* <Route path="/signup" element={<App />} /> */}
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+    <Footer />
   </BrowserRouter>
 );
 
