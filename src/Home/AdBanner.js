@@ -32,16 +32,16 @@ function AdBanner() {
         },
     ]
     return (
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
             <div className="w-auto mx-4 mt-8 overflow-scroll rounded-md">
                 <div className="relative flex flex-row bg-gray-300 w-full h-96">
                     {
                         AdList.map((element, index) => {
                             return (
                                 <div key={index} className="shrink-0 h-auto w-full" style={imageCover(element.imageUrl)}>
-                                    <div className="absolute bg-gradient-to-t from-gray-200/80 to-transparent w-full h-full">
+                                    <div className="absolute bg-gradient-to-t from-gray-900/80 to-transparent w-full h-full">
                                         <div className="flex h-full px-6 pb-4 items-end">
-                                            <p className="font-bold text-3xl">{element.text}</p>
+                                            <p className="font-bold text-3xl text-white">{element.text}</p>
                                         </div>
                                     </div>
                                 </div>

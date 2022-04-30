@@ -30,7 +30,7 @@ function PersonPromotion() {
     }
 
     return (
-        <div className="max-w-6xl mx-auto px-4 pt-10">
+        <div className="max-w-4xl mx-auto px-4 pt-10">
             <div className="flex w-full justify-end pt-4 px-2">
                 <h2 className="grow text-4xl font-bold">Recommended People</h2>
                 <a href="#top" className="grow-0 bg-gray-100 px-4 py-2 rounded-md text-lg hover:bg-gray-300 transition duration-250 ease-in-out">+ more</a>
@@ -42,9 +42,9 @@ function PersonPromotion() {
                             <a href="#top" key={index}>
                                 <div className="relative flex items-center justify-center rounded-md h-full w-full hover:scale-105 transition ease-in-out overflow-hidden">
                                     <div className="w-full h-full bg-cover" style={imageCover(element.imageUrl)}>
-                                        <div className="absolute bg-gradient-to-t from-gray-200/80 to-transparent w-full h-full">
+                                        <div className="absolute bg-gradient-to-t from-gray-900/80 to-transparent w-full h-full">
                                             <div className="flex h-full px-4 pb-2 items-end">
-                                                <p className="font-bold text-lg">{element.data}</p>
+                                                <p className="font-bold text-lg text-white">{element.data}</p>
                                             </div>
                                         </div>
                                     </div>

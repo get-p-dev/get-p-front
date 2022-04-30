@@ -7,11 +7,11 @@ import PersonPromotion from './PersonPromotion';
 
 function App() {
     return (
-        <>
+        <div className="z-0">
             <AdBanner />
             <ProjectPromotion />
             <PersonPromotion />
-        </>
+        </div>
     )
 }
 

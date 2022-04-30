@@ -38,7 +38,7 @@ function ProjectPromotion() {
     }
 
     return (
-        <div className="max-w-6xl mx-auto px-4 pt-10">
+        <div className="max-w-4xl mx-auto px-4 pt-10">
             <div className="flex w-full pt-4 px-2">
                 <h2 className="grow text-4xl font-bold">Trending Projects</h2>
                 <a href="#top" className="grow-0 bg-gray-100 px-4 py-2 rounded-md text-lg hover:bg-gray-300 transition duration-250 ease-in-out">+ more</a>
@@ -50,9 +50,9 @@ function ProjectPromotion() {
                             (element.featured === 1) ?
                                 <a href="#top" key={index} className="relative flex object-fill items-center justify-center row-span-2 col-span-2 rounded-md bg-gray-300 hover:scale-105 transition ease-in-out overflow-hidden">
                                     <div className="h-full w-full" style={imageCover(element.imageUrl)}>
-                                        <div className="absolute bg-gradient-to-t from-gray-200/80 to-transparent w-full h-full">
+                                        <div className="absolute bg-gradient-to-t from-gray-900/80 to-transparent w-full h-full">
                                             <div className="flex h-full px-4 pb-4 items-end">
-                                                <p className="font-bold text-3xl">Steve Steveson</p>
+                                                <p className="font-bold text-3xl text-white">Steve Steveson</p>
                                             </div>
                                         </div>
                                     </div>
@@ -60,9 +60,9 @@ function ProjectPromotion() {
                                 :
                                 <a href="#top" key={index} className="relative flex items-center justify-center rounded-md h-full bg-gray-300 hover:scale-105 transition ease-in-out overflow-hidden">
                                     <div className="h-full w-full" style={imageCover(element.imageUrl)}>
-                                        <div className="absolute bg-gradient-to-t from-gray-300/80 to-transparent w-full h-full">
+                                        <div className="absolute bg-gradient-to-t from-gray-900/80 to-transparent w-full h-full">
                                             <div className="flex h-full px-3 pb-2 items-end">
-                                                <p className="font-bold text-lg">Steve Steveson</p>
+                                                <p className="font-bold text-white text-lg">Steve Steveson</p>
                                             </div>
                                         </div>
                                     </div>
