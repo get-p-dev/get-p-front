@@ -80,7 +80,7 @@ function SignUp() {
                                 기업 & 개인 선택하기
                             </h3>
                             <div className="flex flex-row gap-2">
-                                <label htmlFor="company" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer transition-all ease-in-out duration-500 " + (isCompany ? ' bg-gray-500 text-white' : ' bg-gray-300')}>
+                                <label htmlFor="company" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer transition-all ease-in-out duration-500 " + (isCompany ? ' bg-sky-500 text-white' : ' bg-sky-100')}>
                                     <input className="hidden"
                                         type="radio"
                                         id="company"
@@ -90,7 +90,7 @@ function SignUp() {
                                         }} />
                                     기업으로 가입하기
                                 </label>
-                                <label htmlFor="individual" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer transition-all ease-in-out duration-500 " + (isCompany ? ' bg-gray-300' : ' bg-gray-500 text-white')}>
+                                <label htmlFor="individual" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer transition-all ease-in-out duration-500 " + (isCompany ? ' bg-sky-100' : ' bg-sky-500 text-white')}>
                                     <input className="hidden"
                                         type="radio"
                                         id="individual"
@@ -115,12 +115,12 @@ function SignUp() {
                                 이메일
                             </h3>
                             <div className="flex flex-row gap-2">
-                                <input className="grow border-2 rounded-2xl px-6 py-4" type="text" name="id" placeholder="email@website.com" onChange={e => {
+                                <input className="grow border-2 border-gray-400 rounded-2xl px-6 py-4" type="text" name="id" placeholder="email@website.com" onChange={e => {
                                     setEmail(e.target.value)
                                     validateEmail(e.target.value)
                                 }
                                 } />
-                                <button type="button" className=" flex-0 bg-gray-500 px-8 rounded-2xl text-white" onClick={e => authenticateEmail(email)}>인증하기</button>
+                                <button type="button" className=" flex-0 bg-sky-500 px-8 rounded-2xl text-white" onClick={e => authenticateEmail(email)}>인증하기</button>
                             </div>
                             {validEmail ?
                                 <div>
@@ -145,34 +145,34 @@ function SignUp() {
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 아이디
                             </h3>
-                            <input className="w-full border-2 rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="아이디를 입력하세요" onChange={e => setUserName(e.target.value)} />
+                            <input className="w-full border-2 border-gray-400  rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="아이디를 입력하세요" onChange={e => setUserName(e.target.value)} />
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 비밀번호
                             </h3>
-                            <input className="w-full border-2 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력해주세요." onChange={e => setPassword(e.target.value)} />
+                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력해주세요." onChange={e => setPassword(e.target.value)} />
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 비밀번호 확인
                             </h3>
-                            <input className="w-full border-2 rounded-2xl px-6 py-4" type="password" name="password" placeholder="위에 입력한 비밀번호를 다시 입력해주세요." onChange={e => setCheckPassword(e.target.value)} />
+                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4" type="password" name="password" placeholder="위에 입력한 비밀번호를 다시 입력해주세요." onChange={e => setCheckPassword(e.target.value)} />
                         </label>
                         <div className="flex flex-row px-4">
                             <label className="flex flex-row items-center gap-4">
                                 <input type="checkbox" name="rememeber-me" value="Remember Me"
-                                    className="w-6 h-6 accent-gray-600" />
+                                    className="w-6 h-6 accent-sky-600" />
                                 <p className="text-gray-600 select-none">
 
                                     {/* TODO: Modal로 만들기 */}
 
-                                    <span className="font-bold underline">이용 약관</span> 및 <span className="font-bold underline">개인정보수집 처리방침</span>에 동의합니다.
+                                    <span className="font-bold underline text-sky-500">이용 약관</span> 및 <span className="font-bold underline text-sky-500">개인정보수집 처리방침</span>에 동의합니다.
 
                                 </p>
                             </label>
                         </div>
-                        <button className="w-full text-white bg-gray-500 hover:bg-gray-600 rounded-2xl py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer" onSubmit={e => signUp()}>
+                        <button className="w-full text-white bg-sky-500 hover:bg-sky-600 rounded-2xl py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer" onSubmit={e => signUp()}>
                             {isCompany ?
                                 '기업으로 '
                                 :

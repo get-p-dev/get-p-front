@@ -2,13 +2,13 @@ import React from 'react'
 
 function Footer() {
     return (
-        <div className="bg-gray-100 w-full">
+        <div className="bg-gray-50 w-full">
             <div className="max-w-4xl mx-auto px-8 pt-12 mt-24">
                 <p className="text-2xl font-bold">고객 센터</p>
                 <p className="text-xl">09:00 ~ 18:00</p>
                 <p className="text-xl">주말, 공휴일 휴무</p>
                 <div className="lex w-full justify-end pt-4">
-                    <a href="#top" className="px-4 py-2 bg-gray-300 rounded-md hover:bg-gray-400 transition duration-250 ease-in-out">1:1 문의</a>
+                    <a href="#top" className="px-4 py-2 bg-gray-200 rounded-2xl hover:bg-gray-300 transition duration-250 ease-in-out">1:1 문의</a>
                 </div>
             </div>
             <div className="max-w-4xl mx-auto px-8 py-12 text-gray-600">

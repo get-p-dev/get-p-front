@@ -19,7 +19,7 @@ function SignIn() {
                             </h3>
                             <p>20초도 안 걸리는 회원가입 하러가기</p>
                         </div>
-                        <div className="font-bold bg-gray-500 rounded-xl flex px-10 py-3 text-2xl h-full text-white items-center">
+                        <div className="font-bold bg-sky-500 rounded-xl flex px-10 py-5 text-2xl h-full w-52 text-white justify-center items-center">
                             <Link to="/signup">회원가입</Link>
                         </div>
                     </div>
@@ -29,28 +29,28 @@ function SignIn() {
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 아이디 또는 이메일
                             </h3>
-                            <input className="w-full border-2 rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="email@website.com" onChange={e => setUserName(e.target.value)} />
+                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="email@website.com" onChange={e => setUserName(e.target.value)} />
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 비밀번호
                             </h3>
-                            <input className="w-full border-2 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력하세요." onChange={e => e.target.value} />
+                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력하세요." onChange={e => e.target.value} />
                         </label>
-                        <div className="flex flex-row justify-between px-4">
+                        <div className="flex flex-row justify-between px-4 items-center">
                             <label className="flex flex-row items-center gap-4">
                                 <input type="checkbox" name="rememeber-me" value="Remember Me"
-                                    className="w-6 h-6 accent-gray-600" />
+                                    className="w-6 h-6 accent-sky-600" />
                                 <p className="text-gray-600 select-none">
                                     로그인 상태 유지하기
                                 </p>
                             </label>
 
-                            <Link className="text-gray-600 flex gap-2" to="/forgotPassword">
-                                비밀번호를 잊어버리셨나요? <span className=" font-bold">비밀번호 찾기</span>
+                            <Link className="flex gap-2 items-center" to="/forgotPassword">
+                                비밀번호를 잊어버리셨나요? <span className="text-sky-500 text-lg font-bold">비밀번호 찾기</span>
                             </Link>
                         </div>
-                        <button className="w-full text-white bg-gray-500 hover:bg-gray-600 rounded-2xl py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer" type="submit" name="submit">로그인</button>
+                        <button className="w-full text-white bg-sky-500 hover:bg-sky-600 rounded-2xl py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer" type="submit" name="submit">로그인</button>
                     </form>
                     <div>
                         <button className="w-full bg-yellow-400 hover:bg-yellow-500 rounded-2xl font-semibold py-4 text-lg transition-all ease-in-out">

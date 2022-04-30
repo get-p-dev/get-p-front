@@ -13,7 +13,7 @@ function AdBanner() {
         {
             data: 1,
             text: "Advertisement 1",
-            imageUrl: "https://picsum.photos/id/100/800/450"
+            imageUrl: "https://picsum.photos/id/134/800/450"
         },
         {
             data: 2,
