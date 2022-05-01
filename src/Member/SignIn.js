@@ -29,13 +29,13 @@ function SignIn() {
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 아이디 또는 이메일
                             </h3>
-                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="email@website.com" onChange={e => setUserName(e.target.value)} />
+                            <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="email@website.com" onChange={e => setUserName(e.target.value)} />
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 비밀번호
                             </h3>
-                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력하세요." onChange={e => e.target.value} />
+                            <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력하세요." onChange={e => e.target.value} />
                         </label>
                         <div className="flex flex-row justify-between px-4 items-center">
                             <label className="flex flex-row items-center gap-4">

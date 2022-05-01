@@ -115,7 +115,7 @@ function SignUp() {
                                 이메일
                             </h3>
                             <div className="flex flex-row gap-2">
-                                <input className="grow border-2 border-gray-400 rounded-2xl px-6 py-4" type="text" name="id" placeholder="email@website.com" onChange={e => {
+                                <input className="grow border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="id" placeholder="email@website.com" onChange={e => {
                                     setEmail(e.target.value)
                                     validateEmail(e.target.value)
                                 }
@@ -145,19 +145,19 @@ function SignUp() {
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 아이디
                             </h3>
-                            <input className="w-full border-2 border-gray-400  rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="아이디를 입력하세요" onChange={e => setUserName(e.target.value)} />
+                            <input className="w-full border-2 border-gray-200  rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="아이디를 입력하세요" onChange={e => setUserName(e.target.value)} />
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 비밀번호
                             </h3>
-                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력해주세요." onChange={e => setPassword(e.target.value)} />
+                            <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력해주세요." onChange={e => setPassword(e.target.value)} />
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 비밀번호 확인
                             </h3>
-                            <input className="w-full border-2 border-gray-400 rounded-2xl px-6 py-4" type="password" name="password" placeholder="위에 입력한 비밀번호를 다시 입력해주세요." onChange={e => setCheckPassword(e.target.value)} />
+                            <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="위에 입력한 비밀번호를 다시 입력해주세요." onChange={e => setCheckPassword(e.target.value)} />
                         </label>
                         <div className="flex flex-row px-4">
                             <label className="flex flex-row items-center gap-4">
