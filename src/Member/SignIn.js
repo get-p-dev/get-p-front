@@ -19,8 +19,8 @@ function SignIn() {
                             </h3>
                             <p>20초도 안 걸리는 회원가입 하러가기</p>
                         </div>
-                        <div className="font-bold bg-sky-500 rounded-xl flex px-10 py-5 text-2xl h-full w-52 text-white justify-center items-center">
-                            <Link to="/signup">회원가입</Link>
+                        <div className="font-bold border-2 border-sky-400 rounded-xl flex px-10 py-5 text-2xl h-full w-52 text-sky-400 justify-center items-center">
+                            <Link className="" to="/signup">회원가입</Link>
                         </div>
                     </div>
                     <div className="w-full h-1 bg-gray-200 "></div>

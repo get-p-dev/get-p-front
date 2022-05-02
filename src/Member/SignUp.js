@@ -74,13 +74,15 @@ function SignUp() {
                     <h2 className="w-full text-4xl font-bold px-2">
                         회원가입
                     </h2>
-                    <form className="w-full flex flex-col gap-6">
-                        <label>
+                    <form className="w-full flex flex-col gap-6" onSubmit={(e) => {
+                        e.preventDefault()
+                    }}>
+                        <div>
                             <h3 className="text-xl font-bold px-2 mb-2">
                                 기업 & 개인 선택하기
                             </h3>
                             <div className="flex flex-row gap-2">
-                                <label htmlFor="company" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer transition-all ease-in-out duration-500 " + (isCompany ? ' bg-sky-500 text-white' : ' bg-sky-100')}>
+                                <label htmlFor="company" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer font-bold transition-all ease-in-out duration-500 " + (isCompany ? ' bg-sky-500 text-white' : ' border-2 border-gray-200')}>
                                     <input className="hidden"
                                         type="radio"
                                         id="company"
@@ -90,7 +92,7 @@ function SignUp() {
                                         }} />
                                     기업으로 가입하기
                                 </label>
-                                <label htmlFor="individual" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer transition-all ease-in-out duration-500 " + (isCompany ? ' bg-sky-100' : ' bg-sky-500 text-white')}>
+                                <label htmlFor="individual" className={"flex justify-center items-center flex-1 h-28 rounded-2xl py-10 cursor-pointer font-bold transition-all ease-in-out duration-500 " + (isCompany ? ' border-2 border-gray-200' : ' bg-sky-500 text-white')}>
                                     <input className="hidden"
                                         type="radio"
                                         id="individual"
@@ -109,10 +111,10 @@ function SignUp() {
                                     '*개인을 선택하셨습니다.'
                                 }
                             </p>
-                        </label>
+                        </div>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
-                                이메일
+                                이메일<span className="text-red-500">*</span>
                             </h3>
                             <div className="flex flex-row gap-2">
                                 <input className="grow border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="id" placeholder="email@website.com" onChange={e => {
@@ -143,21 +145,36 @@ function SignUp() {
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
-                                아이디
+                                아이디<span className="text-red-500">*</span>
                             </h3>
                             <input className="w-full border-2 border-gray-200  rounded-2xl px-6 py-4 border-" type="text" name="id" placeholder="아이디를 입력하세요" onChange={e => setUserName(e.target.value)} />
+                            <div>
+                                <p className='px-2 mt-2 text-red-500'>
+                                    *아이디를 입력해주세요.
+                                </p>
+                            </div>
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
-                                비밀번호
+                                비밀번호<span className="text-red-500">*</span>
                             </h3>
                             <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력해주세요." onChange={e => setPassword(e.target.value)} />
+                            <div>
+                                <p className='px-2 mt-2 text-red-500'>
+                                    *비밀번호 입력해주세요.
+                                </p>
+                            </div>
                         </label>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
-                                비밀번호 확인
+                                비밀번호 확인<span className="text-red-500">*</span>
                             </h3>
                             <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="위에 입력한 비밀번호를 다시 입력해주세요." onChange={e => setCheckPassword(e.target.value)} />
+                            <div>
+                                <p className='px-2 mt-2 text-red-500'>
+                                    *확인 비밀번호 입력해주세요.
+                                </p>
+                            </div>
                         </label>
                         <div className="flex flex-row px-4">
                             <label className="flex flex-row items-center gap-4">
@@ -168,7 +185,6 @@ function SignUp() {
                                     {/* TODO: Modal로 만들기 */}
 
                                     <span className="font-bold underline text-sky-500">이용 약관</span> 및 <span className="font-bold underline text-sky-500">개인정보수집 처리방침</span>에 동의합니다.
-
                                 </p>
                             </label>
                         </div>
