@@ -6,6 +6,7 @@ import {
   Route
 } from 'react-router-dom'
 import './index.css';
+import { CookiesProvider } from 'react-cookie';
 import reportWebVitals from './reportWebVitals';
 import Home from './Home/Home'
 import SignIn from './Member/SignIn'
@@ -16,17 +17,19 @@ import NotFound from './NotFound'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <BrowserRouter>
-    <Header />
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="signin" element={<SignIn />} />
-      <Route path="signup" element={<SignUp />} />
-      {/* <Route path="/signup" element={<App />} /> */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-    <Footer />
-  </BrowserRouter>
+  <CookiesProvider>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
+        {/* <Route path="/signup" element={<App />} /> */}
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+      <Footer />
+    </BrowserRouter>
+  </CookiesProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
