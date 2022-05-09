@@ -6,7 +6,7 @@ function NotFound() {
     return (
         <div className="max-w-6xl mx-auto px-4 pt-10 bg-white h-[50vh]">
             <div className="flex h-full flex-col pt-4 px-2 justify-center items-center">
-                <img className="w-40 aspect-auto mb-10" src={logo}></img>
+                <img className="w-40 aspect-auto mb-10" src={logo} alt='get-p logo'></img>
                 <h2 className="text-4xl font-bold mb-4 font-mono">
                     404 Not Found
                 </h2>
