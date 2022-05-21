@@ -1,36 +1,12 @@
 import React, { useState } from 'react'
-import axios from 'axios'
 import { Link } from 'react-router-dom'
+import { useAuth } from '../AuthContext'
 
 function SignIn() {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [rememberMe, setRememberMe] = useState(false)
-
-    function handleSignin() {
-        const send_param = {
-            email: email,
-            password: password,
-            remember: rememberMe
-        }
-
-        // console.log(send_param)
-
-        // * test ID: test1@naver.com
-        // * test PW: 2dogs@house
-
-        axios.post("http://localhost:11854/api/users/login", send_param).then(returnData => {
-            const { message, result } = returnData.data;
-            // console.log(returnData)
-            if (result) {
-                alert(message)
-                window.location.href = "/"
-                // 로그인 성공시 해야할 것들
-            } else {
-                alert(message)
-            }
-        })
-    }
+    const { onSignIn } = useAuth()
 
     return (
         <div className="max-w-4xl mx-auto px-4 mt-12">
@@ -46,14 +22,14 @@ function SignIn() {
                             </h3>
                             <p>20초도 안 걸리는 회원가입 하러가기</p>
                         </div>
-                        <div className="font-bold border-2 border-sky-400 rounded-xl flex px-10 py-5 text-2xl h-full w-52 text-sky-400 justify-center items-center">
-                            <Link className="" to="/signup">회원가입</Link>
-                        </div>
+                        <Link to="/signup" className="font-bold border-2 border-sky-400 rounded-xl flex px-10 py-5 text-2xl h-full w-52 text-sky-400 justify-center items-center">
+                            <div className="" to="/signup">회원가입</div>
+                        </Link>
                     </div>
                     <div className="w-full h-1 bg-gray-200 "></div>
                     <form className="w-full flex flex-col gap-6" onSubmit={(e) => {
                         e.preventDefault()
-                        handleSignin()
+                        onSignIn()
                     }}>
                         <label>
                             <h3 className="text-xl font-bold px-2 mb-2">
@@ -70,7 +46,7 @@ function SignIn() {
                         <div className="flex flex-row justify-between px-4 items-center">
                             <label className="flex flex-row items-center gap-4">
                                 <input type="checkbox" name="rememeber-me" value="Remember Me"
-                                    className="w-6 h-6 accent-sky-600" onChange={() => setRememberMe(!rememberMe)} />
+                                    className="w-6 h-6 accent-sky-500" onChange={() => setRememberMe(!rememberMe)} />
                                 <p className="text-gray-600 select-none">
                                     로그인 상태 유지하기
                                 </p>
@@ -81,15 +57,20 @@ function SignIn() {
                             </Link>
                         </div>
                         <button className="w-full text-white bg-sky-500 hover:bg-sky-600 rounded-2xl py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer" type="submit" name="submit">로그인</button>
+
                     </form>
+                    <button onClick={onSignIn} className="w-full text-white bg-green-500 hover:bg-green-600 rounded-2xl py-4 text-lg font-semibold transition-all ease-in-out cursor-pointer flex justify-center">
+                        임시 로그인
+                    </button>
                     <div>
                         <button className="w-full bg-yellow-400 hover:bg-yellow-500 rounded-2xl font-semibold py-4 text-lg transition-all ease-in-out">
                             <span className="font-bold">카카오톡</span>으로 로그인하기
                         </button>
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }
 
