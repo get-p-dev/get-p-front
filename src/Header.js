@@ -18,8 +18,8 @@ function Header() {
                         placeholder='Search items, collections, and accounts'
                     />
                     <div className="grow-0 flex flex-row gap-2">
-                        <Link to="/" className="underline text-gray-600">Project</Link>
-                        <Link to="/" className="underline text-gray-600">People</Link>
+                        <Link to="/projects" className="underline text-gray-600">Projects</Link>
+                        <Link to="/people" className="underline text-gray-600">People</Link>
                         <Link to="/" className="underline text-gray-600">Info</Link>
                     </div>
                     <div className="grow-0 flex flex-row gap-2">

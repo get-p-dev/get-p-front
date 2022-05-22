@@ -12,9 +12,11 @@ function MyPage() {
     }, [navigate, token])
 
     return (
-        <>
-            <h2>{token}'s My Page</h2>
-        </>
+        <div className="max-w-4xl mx-auto px-4 pt-10">
+            <div className="flex w-full justify-end pt-4 px-2">
+                <h2 className="grow text-4xl font-bold">My Page</h2>
+            </div>
+        </div>
     )
 }
 

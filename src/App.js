@@ -15,6 +15,8 @@ import Header from './Header'
 import Footer from './Footer'
 import NotFound from './NotFound'
 import AuthContext, { useAuth } from './AuthContext'
+import Projects from './Projects'
+import People from './People'
 
 function App() {
     // * test ID: test1@naver.com
@@ -110,11 +112,13 @@ function App() {
                         </ProtectedRoute>
                     }
                 />
+                <Route path="projects" element={<Projects />} />
+                <Route path="people" element={<People />} />
 
                 <Route path="*" element={<NotFound />} />
             </Routes>
             <Footer />
-        </AuthProvider>
+        </AuthProvider >
     )
 }
 
