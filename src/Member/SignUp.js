@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { imageListClasses } from '@mui/material'
 
 /**
  * TODO: 해야할 일들
@@ -162,13 +161,6 @@ function SignUp() {
         })
     }
 
-    function IndividualForm() {
-        return (
-            <>
-            </>
-        )
-    }
-
     return (
         <div className="max-w-4xl mx-auto px-4 mt-12">
             <div className="w-full flex flex-col justify-center items-center">
@@ -247,7 +239,7 @@ function SignUp() {
                                         <h3 className="text-xl font-bold px-2 mb-2">
                                             기업 주소<span className="text-red-500">*</span>
                                         </h3>
-                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="기업의 웹사이트/주소를 입력해주세요." onChange={e => setUrl(e.target.value)} />
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="기업의 웹사이트/주소를 입력해주세요." onChange={e => setAddress(e.target.value)} />
                                     </label>
                                 </>
                                 :
