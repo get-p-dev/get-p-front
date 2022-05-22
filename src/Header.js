@@ -1,10 +1,11 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from './AuthContext';
 import logo from './logo.png'
 // import { useCookies } from 'react-cookie';
 
 function Header() {
-
+    const { token, onSignOut } = useAuth()
     // const [cookies, setCookie] = useCookies();
 
     return (
@@ -17,12 +18,20 @@ function Header() {
                         placeholder='Search items, collections, and accounts'
                     />
                     <div className="grow-0 flex flex-row gap-2">
-                        <a href="#top" className="underline text-gray-600">Project</a>
-                        <a href="#top" className="underline text-gray-600">People</a>
-                        <a href="#top" className="underline text-gray-600">Info</a>
+                        <Link to="/projects" className="underline text-gray-600">Projects</Link>
+                        <Link to="/people" className="underline text-gray-600">People</Link>
+                        <Link to="/" className="underline text-gray-600">Info</Link>
                     </div>
                     <div className="grow-0 flex flex-row gap-2">
-                        <Link to="/signin" className="underline text-gray-800">로그인 / 회원가입</Link>
+                        {
+                            token ?
+                                <>
+                                    <Link to='/mypage' className="underline text-gray-800">마이페이지</Link>
+                                    <button onClick={onSignOut} className="underline text-gray-800">로그아웃</button>
+                                </>
+                                :
+                                <Link to="/signin" className="underline text-gray-800">로그인 / 회원가입</Link>
+                        }
                     </div>
                 </div>
             </div>
