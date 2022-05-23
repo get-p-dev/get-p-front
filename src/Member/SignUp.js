@@ -15,7 +15,7 @@ function SignUp() {
 
     /*
     * Company Field
-
+    *
     * companyName,
     * companyImage,
     * industry,
@@ -26,6 +26,17 @@ function SignUp() {
     * address,
     * email,
     * password
+    * 
+    * Individual Field
+    * 
+    * username: 이름(본명) *필수
+    * image: 프로필(사진)
+    * major: 전공
+    * job: 주요 업무 *필수
+    * description: 자기 소개
+    * specs: 수상 내역 및 경력
+    * address: 활동 지역 *필수
+    * school: (출신 학교)
      */
 
     // * Common Field
@@ -35,14 +46,20 @@ function SignUp() {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [agreed, setAgreed] = useState(false)
+    const [description, setDescription] = useState('')
+    const [address, setAddress] = useState('')
 
     // * Company Field
     const [industry, setIndustry] = useState('')
     const [representativeDirector, setRepresentativeDirector] = useState('')
-    const [description, setDescription] = useState('')
     const [phoneNumber, setPhoneNumber] = useState('')
     const [url, setUrl] = useState('')
-    const [address, setAddress] = useState('')
+
+    // * Individual Field
+    const [major, setMajor] = useState('')
+    const [job, setJob] = useState('')
+    const [specs, setSpecs] = useState('')
+    const [school, setSchool] = useState('')
 
 
     const [validEmail, setValidEmail] = useState(false)
@@ -114,25 +131,31 @@ function SignUp() {
                 email: email,
                 password: password
             }
+            axios.post("http://localhost:8080/api/company/signup", send_param).then(returnData => {
+                const { message, result } = returnData.data;
+                console.log(returnData)
+                if (result) {
+                    alert(message)
+                    window.location.href = "/signin"
+                    // 로그인 성공시 해야할 것들
+                } else {
+                    alert(message)
+                }
+            })
         } else {
             send_param = {
-                // 일반인 파라미터
+                username: username,
+                profileImage: image,
+                major: major,
+                job: job,
+                description: description,
+                specs: specs,
+                address: address,
+                school: school
             }
         }
 
         console.log(send_param)
-
-        axios.post("http://localhost:8080/api/company/signup", send_param).then(returnData => {
-            const { message, result } = returnData.data;
-            console.log(returnData)
-            if (result) {
-                alert(message)
-                window.location.href = "/signin"
-                // 로그인 성공시 해야할 것들
-            } else {
-                alert(message)
-            }
-        })
     }
 
     function authenticateEmail(email) {
@@ -320,26 +343,161 @@ function SignUp() {
                                         <h3 className="text-xl font-bold px-2 mb-2">
                                             기업 주소<span className="text-red-500">*</span>
                                         </h3>
-                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="기업의 웹사이트/주소를 입력해주세요." onChange={e => setAddress(e.target.value)} />
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="기업의 실제 주소를 입력해주세요." onChange={e => setAddress(e.target.value)} />
                                     </label>
                                 </>
                                 :
                                 <>
-                                    <EmailForm email={email} validEmail={validEmail} setEmail={setEmail} authenticateEmail={authenticateEmail} isCompany={isCompany} />
+                                    {
+                                        /*
+                                        * username: 이름(본명) * 필수
+                                        * image: 프로필(사진)
+                                        * major: 전공
+                                        * job: 주요 업무 * 필수
+                                        * description: 자기 소개
+                                        * specs: 수상 내역 및 경력
+                                        * address: 활동 지역 * 필수
+                                        * school: (출신 학교)
+                                        */
+                                    }
 
-                                    <NameForm setUsername={setUsername} />
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            이메일<span className="text-red-500">*</span>
+                                        </h3>
+                                        <div className="flex flex-row gap-2">
+                                            <input className="grow border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="id" placeholder="email@website.com" onChange={e => {
+                                                setEmail(e.target.value)
 
-                                    <PasswordForm password={password} setPassword={setPassword} isSafe={isSafe} />
+                                            }
+                                            } />
+                                            <button type="button" className=" flex-0 bg-sky-500 px-8 rounded-2xl text-white" onClick={e => authenticateEmail(email)}>인증하기</button>
+                                        </div>
+                                        {(email.length > 0) &&
+                                            (
+                                                validEmail ?
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-green-500'>
+                                                            알맞은 이메일입니다.
+                                                        </p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-red-500'>
+                                                            * .edu 혹은 .ac.kr로 끝나는 대학교 이메일을 입력해주세요.
+                                                        </p>
+                                                    </div>
+                                            )
+                                        }
+                                    </label>
+                                    {/* 비밀번호 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            비밀번호<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력해주세요." onChange={e => {
+                                            setPassword(e.target.value)
+                                        }} />
+                                        {(password.length > 0) &&
+                                            (
+                                                (isSafe) ?
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-green-500'>
+                                                            안전한 비밀번호입니다.
+                                                        </p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-red-500'>
+                                                            *안전하지 않은 비밀번호입니다.
+                                                        </p>
+                                                    </div>
+                                            )
+                                        }
+                                    </label>
 
-                                    <ConfirmPasswordForm confirmPassword={confirmPassword} setConfirmPassword={setConfirmPassword} isSame={isSame} />
+                                    {/* 비밀번호 확인 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            비밀번호 확인<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="위에 입력한 비밀번호를 다시 입력해주세요." onChange={e => {
+                                            setConfirmPassword(e.target.value)
+                                        }} />
+                                        {(confirmPassword.length > 0) &&
+                                            (
+                                                isSame ?
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-green-500'>
+                                                            알맞은 비밀번호입니다.
+                                                        </p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-red-500'>
+                                                            *위에 입력한 비밀번호를 다시 입력해주세요.
+                                                        </p>
+                                                    </div>
+                                            )
+                                        }
+                                    </label>
+
+                                    {/* 개인 프로필 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            개인 프로필<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="file" name="profile_img" accept="image/jpg,image/png,image/jpeg,image/gif" placeholder="개인 프로필을 입력해주세요." onChange={e => encodeFileToBase64(e.target.files[0])} />
+                                        {image && <img className="h-72 mx-auto" src={image} alt="preview-img" />}
+                                    </label>
+
+                                    {/* 전공 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            전공<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="대표자명을 입력해주세요." onChange={e => setMajor(e.target.value)} />
+                                    </label>
+
+                                    {/* 자기 소개 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            자기 소개<span className="text-red-500">*</span>
+                                        </h3>
+                                        <textarea className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4 h-28" type="textarea" name="name" placeholder="자신을 소개해주세요." onChange={e => setDescription(e.target.value)} />
+                                    </label>
+
+                                    {/* 스펙 및 경력 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            수상 내역 및 경력<span className="text-red-500">*</span>
+                                        </h3>
+                                        <textarea className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4 h-28" type="textarea" name="name" placeholder="본인의 수상 내역 및 경력을 입력해주세요." onChange={e => setSpecs(e.target.value)} />
+                                    </label>
+
+                                    {/* 활동 지역 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            활동 지역<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="본인의 활동 지역을 입력해주세요." onChange={e => setAddress(e.target.value)} />
+                                    </label>
+
+                                    {/* 출신 학교 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            출신 학교<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="본인의 출신 학교를 입력해주세요." onChange={e => setAddress(e.target.value)} />
+                                    </label>
                                 </>
                         }
 
                         <TermsNConditions agreed={agreed} setAgreed={setAgreed} />
 
                         <SignUpButton isCompany={isCompany} />
-                    </form>
-                </div>
+                    </form >
+                </div >
             </div >
         </div >
     )
