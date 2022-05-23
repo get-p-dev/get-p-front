@@ -104,7 +104,7 @@ function SignUp() {
         if (isCompany) {
             send_param = {
                 companyName: username,
-                companyImage: image,
+                // companyImage: image,
                 industry: industry,
                 representativeDirector: representativeDirector,
                 discription: description,
@@ -122,7 +122,7 @@ function SignUp() {
 
         console.log(send_param)
 
-        axios.post("http://localhost:11854/api/users/signup", send_param).then(returnData => {
+        axios.post("http://localhost:8080/api/company/signup", send_param).then(returnData => {
             const { message, result } = returnData.data;
             console.log(returnData)
             if (result) {
