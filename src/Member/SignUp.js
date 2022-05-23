@@ -177,6 +177,87 @@ function SignUp() {
                         {
                             isCompany ?
                                 <>
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            이메일<span className="text-red-500">*</span>
+                                        </h3>
+                                        <div className="flex flex-row gap-2">
+                                            <input className="grow border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="id" placeholder="email@website.com" onChange={e => {
+                                                setEmail(e.target.value)
+
+                                            }
+                                            } />
+                                            <button type="button" className=" flex-0 bg-sky-500 px-8 rounded-2xl text-white" onClick={e => authenticateEmail(email)}>인증하기</button>
+                                        </div>
+                                        {(email.length > 0) &&
+                                            (
+                                                validEmail ?
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-green-500'>
+                                                            알맞은 이메일입니다.
+                                                        </p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-red-500'>
+                                                            * 회사 소유의 알맞은 이메일을 입력해주세요.
+                                                        </p>
+                                                    </div>
+                                            )
+                                        }
+                                    </label>
+                                    {/* 비밀번호 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            비밀번호<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="비밀번호를 입력해주세요." onChange={e => {
+                                            setPassword(e.target.value)
+                                        }} />
+                                        {(password.length > 0) &&
+                                            (
+                                                (isSafe) ?
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-green-500'>
+                                                            안전한 비밀번호입니다.
+                                                        </p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-red-500'>
+                                                            *안전하지 않은 비밀번호입니다.
+                                                        </p>
+                                                    </div>
+                                            )
+                                        }
+                                    </label>
+
+                                    {/* 비밀번호 확인 */}
+                                    <label>
+                                        <h3 className="text-xl font-bold px-2 mb-2">
+                                            비밀번호 확인<span className="text-red-500">*</span>
+                                        </h3>
+                                        <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="password" name="password" placeholder="위에 입력한 비밀번호를 다시 입력해주세요." onChange={e => {
+                                            setConfirmPassword(e.target.value)
+                                        }} />
+                                        {(confirmPassword.length > 0) &&
+                                            (
+                                                isSame ?
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-green-500'>
+                                                            알맞은 비밀번호입니다.
+                                                        </p>
+                                                    </div>
+                                                    :
+                                                    <div>
+                                                        <p className='px-2 mt-2 text-red-500'>
+                                                            *위에 입력한 비밀번호를 다시 입력해주세요.
+                                                        </p>
+                                                    </div>
+                                            )
+                                        }
+                                    </label>
+
                                     {/* 기업명 */}
                                     <label>
                                         <h3 className="text-xl font-bold px-2 mb-2">
@@ -234,7 +315,7 @@ function SignUp() {
                                         <input className="w-full border-2 border-gray-200 rounded-2xl px-6 py-4" type="text" name="name" placeholder="기업의 웹사이트/홈페이지를 입력해주세요." onChange={e => setUrl(e.target.value)} />
                                     </label>
 
-                                    {/* 웹사이트/홈페이지 */}
+                                    {/* 기업 주소 */}
                                     <label>
                                         <h3 className="text-xl font-bold px-2 mb-2">
                                             기업 주소<span className="text-red-500">*</span>
